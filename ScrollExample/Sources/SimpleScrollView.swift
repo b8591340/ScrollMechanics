@@ -130,7 +130,7 @@ class SimpleScrollView: UIView {
         } else {
             duration = parameters.duration
         }
-        
+
         contentOffsetAnimation = TimerAnimation(
             duration: duration,
             animations: { [weak self] _, time in
@@ -142,7 +142,7 @@ class SimpleScrollView: UIView {
                 self?.bounce(withVelocity: velocity)
             })
     }
-    
+
     private func bounce(withVelocity velocity: CGPoint) {
         let restOffset = contentOffset.clamped(to: contentOffsetBounds)
         let displacement = contentOffset - restOffset
